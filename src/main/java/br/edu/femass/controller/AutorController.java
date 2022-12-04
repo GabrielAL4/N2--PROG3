@@ -62,10 +62,6 @@ public class AutorController implements Initializable {
         
         fillList();
         edit(false);
-        /*preencherLista();
-        preencherTabela();
-        preencherCombo();
-        editar(false);*/
     }
 
     @FXML
