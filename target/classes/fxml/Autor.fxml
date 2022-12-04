@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.AutorController">
+   <children>
+      <ListView fx:id="lstAutores" layoutX="14.0" layoutY="18.0" onKeyPressed="#lstAutores_KeyPressed" onMouseClicked="#lstAutores_MouseClicked" prefHeight="330.0" prefWidth="209.0" />
+      <Label layoutX="395.0" layoutY="25.0" text="Nome" />
+      <TextField fx:id="txtNome" disable="true" layoutX="258.0" layoutY="53.0" prefHeight="25.0" prefWidth="304.0" />
+      <TextField fx:id="txtSobrenome" disable="true" layoutX="259.0" layoutY="132.0" prefHeight="25.0" prefWidth="304.0" />
+      <TextField fx:id="txtNacionalidade" disable="true" layoutX="263.0" layoutY="206.0" prefHeight="25.0" prefWidth="304.0" />
+      <Label layoutX="378.0" layoutY="97.0" text="Sobrenome" />
+      <Label layoutX="371.0" layoutY="183.0" text="Nacionalidade" />
+      <Button fx:id="addButton" disable="true" layoutX="375.0" layoutY="329.0" mnemonicParsing="false" onAction="#adicionar_autor" text="Adicionar" />
+      <Button fx:id="includeButton" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#incluir_autor" text="Incluir" />
+      <Button fx:id="modifyButton" layoutX="93.0" layoutY="355.0" mnemonicParsing="false" onAction="#alterar_autor" text="Alterar" />
+      <Button fx:id="deleteButton" layoutX="171.0" layoutY="355.0" mnemonicParsing="false" onAction="#excluir_autor" text="Excluir" />
+   </children>
+</Pane>
