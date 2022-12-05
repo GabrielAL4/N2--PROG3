@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.MenuController">
+   <children>
+      <Button layoutX="93.0" layoutY="295.0" mnemonicParsing="false" onAction="#bibliotecario_click" prefHeight="50.0" prefWidth="155.0" text="Bibliotecário" />
+      <Button layoutX="369.0" layoutY="295.0" mnemonicParsing="false" onAction="#atendente_click" prefHeight="50.0" prefWidth="155.0" text="Atendente" />
+      <VBox layoutX="35.0" layoutY="15.0" prefHeight="210.0" prefWidth="528.0">
+         <children>
+            <ImageView fitHeight="258.0" fitWidth="529.0">
+               <image>
+                  <Image url="@../imgs/logo-faculdade-femass.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</Pane>

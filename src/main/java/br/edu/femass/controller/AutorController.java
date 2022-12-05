@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import br.edu.femass.dao.Dao;
 import br.edu.femass.dao.DaoAutor;
 import br.edu.femass.model.Autor;
 import javafx.collections.FXCollections;
