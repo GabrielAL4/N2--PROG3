@@ -1,5 +1,6 @@
 package br.edu.femass.model;
 
+
 public class Aluno extends Leitor{
     protected String matricula;
     protected int prazo;

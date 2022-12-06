@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="505.0" layoutY="332.0" mnemonicParsing="false" onDragDetected="#gravar_click" text="Gravar" />
+      <Label layoutX="272.0" layoutY="22.0" text="Gravar Livro" />
+      <ListView fx:id="ListLivro" layoutX="14.0" layoutY="29.0" prefHeight="342.0" prefWidth="200.0" />
+      <Label layoutX="244.0" layoutY="78.0" text="Codigo" />
+      <Label layoutX="244.0" layoutY="146.0" text="Titulo" />
+      <TextField fx:id="txtCodigo" layoutX="304.0" layoutY="74.0" prefHeight="25.0" prefWidth="240.0" />
+      <TextField fx:id="txtTitulo" layoutX="304.0" layoutY="142.0" prefHeight="25.0" prefWidth="240.0" />
+   </children>
+</Pane>

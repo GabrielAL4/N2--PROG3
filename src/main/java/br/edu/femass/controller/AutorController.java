@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javax.persistence.Table;
+
 import br.edu.femass.dao.DaoAutor;
 import br.edu.femass.model.Autor;
 import javafx.collections.FXCollections;
@@ -13,7 +15,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
@@ -30,6 +35,19 @@ public class AutorController implements Initializable {
 
     @FXML
     private ListView<Autor> lstAutores;
+
+    @FXML
+    private TableView<Autor> tableAutores = new TableView<>();
+
+    @FXML
+    private TableColumn<Autor, Long> columnId = new TableColumn<>();
+    @FXML
+    private TableColumn<Autor, String> columnNome = new TableColumn<>();
+    @FXML
+    private TableColumn<Autor, String> columnSobrenome = new TableColumn<>();
+    @FXML
+    private TableColumn<Autor, String> columnNacionalidade = new TableColumn<>();
+
 
     private Autor autor;
 
@@ -124,8 +142,31 @@ public class AutorController implements Initializable {
         lstAutores.setItems(data);
  
     }
+
+    private void fillTable(){
+        List<Autor> autores = dao.searchAll();
+
+        ObservableList<Autor> data = FXCollections.observableArrayList(autores);
+ 
+        tableAutores.setItems(data);
+ 
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       fillList();
+        columnNome.setCellValueFactory(
+            new PropertyValueFactory<Autor, String>("Nome")
+        );
+        columnSobrenome.setCellValueFactory(
+            new PropertyValueFactory<Autor, String>("Sobrenome")
+        );
+        columnNacionalidade.setCellValueFactory(
+            new PropertyValueFactory<Autor, String>("Nacionalidade")
+        );
+        columnId.setCellValueFactory(
+            new PropertyValueFactory<Autor, Long>("Id")
+        );
+        
+        fillList();
+        fillTable();
     }    
 }
