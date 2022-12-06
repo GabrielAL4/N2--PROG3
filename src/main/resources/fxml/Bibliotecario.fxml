@@ -3,12 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.BibliotecarioController">
    <children>
-      <Button layoutX="94.0" layoutY="62.0" mnemonicParsing="false" onAction="#autor_menu" prefHeight="59.0" prefWidth="134.0" text="Autor" />
-      <Button layoutX="94.0" layoutY="153.0" mnemonicParsing="false" onAction="#livro_menu" prefHeight="59.0" prefWidth="134.0" text="Livro" />
-      <Button layoutX="94.0" layoutY="245.0" mnemonicParsing="false" onAction="#leitor_menu" prefHeight="59.0" prefWidth="134.0" text="Leitor" />
-      <Button layoutX="366.0" layoutY="62.0" mnemonicParsing="false" onAction="#emprestimo_menu" prefHeight="59.0" prefWidth="134.0" text="Emprestimo" />
+      <Button layoutX="99.0" layoutY="62.0" mnemonicParsing="false" onAction="#autor_menu" prefHeight="59.0" prefWidth="134.0" text="Autor" />
+      <Button layoutX="357.0" layoutY="62.0" mnemonicParsing="false" onAction="#livro_menu" prefHeight="59.0" prefWidth="134.0" text="Livro" />
    </children>
 </Pane>

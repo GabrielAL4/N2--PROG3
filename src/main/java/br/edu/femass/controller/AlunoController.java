@@ -18,19 +18,15 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 public class AlunoController implements Initializable{
-    @FXML
-    private TextField txtMatricula;
-    
+
     private DaoAluno dao = new DaoAluno();
-    
     private Aluno aluno;
-
     private Boolean including;
-
 
     @FXML
     private Button saveButton;
-
+    @FXML
+    private TextField txtMatricula;
     @FXML
     private ListView<Aluno> lstAlunos;
     @FXML
@@ -39,7 +35,6 @@ public class AlunoController implements Initializable{
     private TextField txtEndereco;
     @FXML
     private TextField txtTelefone;
-
     @FXML
     private Button includeButton;
     @FXML
@@ -53,9 +48,9 @@ public class AlunoController implements Initializable{
     private void salvar_aluno(ActionEvent event) {
 
         aluno.setNome(txtNome.getText());
-        aluno.setMatricula(txtMatricula.getText());
         aluno.setEndereco(txtEndereco.getText());
         aluno.setTelefone(txtTelefone.getText());
+        aluno.setMatricula(txtMatricula.getText());
 
         if (including) {
             dao.insert(aluno);
@@ -74,8 +69,8 @@ public class AlunoController implements Initializable{
         aluno = new Aluno();
         txtNome.setText("");
         txtEndereco.setText("");
-        txtMatricula.setText("");
         txtTelefone.setText("");
+        txtMatricula.setText("");
         txtNome.requestFocus();
     }
 
@@ -105,8 +100,8 @@ public class AlunoController implements Initializable{
         lstAlunos.setDisable(enable);
         txtNome.setDisable(!enable);
         txtEndereco.setDisable(!enable);
-        txtMatricula.setDisable(!enable);
         txtTelefone.setDisable(!enable);
+        txtMatricula.setDisable(!enable);
         addButton.setDisable(!enable);
         includeButton.setDisable(enable);
         modifyButton.setDisable(enable);
@@ -119,8 +114,8 @@ public class AlunoController implements Initializable{
 
         txtNome.setText(aluno.getNome());
         txtEndereco.setText(aluno.getEndereco());
-        txtMatricula.setText(aluno.getMatricula());
         txtTelefone.setText(aluno.getTelefone());
+        txtMatricula.setText(aluno.getMatricula());
     }
 
     private void fillList(){

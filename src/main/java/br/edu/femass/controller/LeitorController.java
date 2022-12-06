@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 
 public class LeitorController implements Initializable{
     private DaoLeitor dao = new DaoLeitor();
-    private Leitor leitor;
     @FXML
     private	ListView<Leitor> lstLeitores;
 

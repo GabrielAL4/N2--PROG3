@@ -3,7 +3,6 @@ package br.edu.femass.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class Emprestimo {
     protected LocalDate dataEmprestimo;

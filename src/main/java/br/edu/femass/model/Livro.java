@@ -1,18 +1,23 @@
 package br.edu.femass.model;
 
-import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Livro {
-    protected Long codigo;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long codigo;
     protected String titulo;
     protected Long incremento = 1L;
-    protected List<Autor> autores = new ArrayList<>();
-    public Livro(String titulo, List<Autor> autores) {
+    protected Autor autor;
+    public Livro(String titulo, Autor autor) {
         this.codigo = incremento;
         this.titulo = titulo;
-        this.autores = autores;
+        this.autor = autor;
         this.incremento++;
     }
 
@@ -31,11 +36,11 @@ public class Livro {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-    public List<Autor> getAutor() {
-        return autores;
+    public Autor getAutor() {
+        return autor;
     }
-    public void setAutor(List<Autor> autor) {
-        this.autores = autor;
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
     @Override

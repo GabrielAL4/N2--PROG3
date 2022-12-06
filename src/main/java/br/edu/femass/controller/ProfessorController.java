@@ -4,8 +4,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import br.edu.femass.dao.DaoAluno;
-import br.edu.femass.model.Aluno;
+import br.edu.femass.dao.DaoProfessor;
+import br.edu.femass.model.Professor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,11 +19,11 @@ import javafx.scene.input.MouseEvent;
 
 public class ProfessorController implements Initializable{
     @FXML
-    private TextField txtMatricula;
+    private TextField txtDisciplina;
     
-    private DaoAluno dao = new DaoAluno();
+    private DaoProfessor dao = new DaoProfessor();
     
-    private Aluno aluno;
+    private Professor professor;
 
     private Boolean including;
 
@@ -32,7 +32,7 @@ public class ProfessorController implements Initializable{
     private Button saveButton;
 
     @FXML
-    private ListView<Aluno> lstAlunos;
+    private ListView<Professor> lstProfessores;
     @FXML
     private TextField txtNome;
     @FXML
@@ -50,17 +50,17 @@ public class ProfessorController implements Initializable{
     private Button addButton;
 
     @FXML
-    private void adicionar_aluno(ActionEvent event) {
+    private void salvar_professor(ActionEvent event) {
 
-        aluno.setNome(txtNome.getText());
-        aluno.setMatricula(txtMatricula.getId());
-        aluno.setEndereco(txtEndereco.getText());
-        aluno.setTelefone(txtTelefone.getAccessibleText());
+        professor.setNome(txtNome.getText());
+        professor.setDisciplina(txtDisciplina.getId());
+        professor.setEndereco(txtEndereco.getText());
+        professor.setTelefone(txtTelefone.getAccessibleText());
 
         if (including) {
-            dao.insert(aluno);
+            dao.insert(professor);
         } else {
-            dao.modify(aluno);
+            dao.modify(professor);
         }
         
         fillList();
@@ -68,44 +68,44 @@ public class ProfessorController implements Initializable{
     }
 
     @FXML
-    private void incluir_aluno(ActionEvent event) {
+    private void incluir_professor(ActionEvent event) {
         edit(true);
         including = true;
-        aluno = new Aluno();
+        professor = new Professor();
         txtNome.setText("");
         txtEndereco.setText("");
-        txtMatricula.setText("");
+        txtDisciplina.setText("");
         txtTelefone.setText("");
         txtNome.requestFocus();
     }
 
     @FXML
-    private void alterar_aluno(ActionEvent event) {
+    private void alterar_professor(ActionEvent event) {
         edit(true);
         including = false;
     }
     
     @FXML
-    private void excluir_aluno(ActionEvent event) {
-        dao.delete(aluno);
+    private void excluir_professor(ActionEvent event) {
+        dao.delete(professor);
         fillList();
     }
 
     @FXML
-    private void lstalunoes_KeyPressed(KeyEvent event){
+    private void lstprofessores_KeyPressed(KeyEvent event){
         showData();
     }
     
     @FXML
-    private void lstalunoes_MouseClicked(MouseEvent event){
+    private void lstprofessores_MouseClicked(MouseEvent event){
         showData();
     }
 
     private void edit(boolean enable){
-        lstAlunos.setDisable(enable);
+        lstProfessores.setDisable(enable);
         txtNome.setDisable(!enable);
         txtEndereco.setDisable(!enable);
-        txtMatricula.setDisable(!enable);
+        txtDisciplina.setDisable(!enable);
         txtTelefone.setDisable(!enable);
         addButton.setDisable(!enable);
         includeButton.setDisable(enable);
@@ -113,22 +113,22 @@ public class ProfessorController implements Initializable{
         deleteButton.setDisable(enable);
     }
     private void showData(){
-        this.aluno = lstAlunos.getSelectionModel().getSelectedItem();
+        this.professor = lstProfessores.getSelectionModel().getSelectedItem();
 
-        if(aluno == null) return;
+        if(professor == null) return;
 
-        txtNome.setText(aluno.getNome());
-        txtEndereco.setText(aluno.getEndereco());
-        txtMatricula.setText(aluno.getMatricula());
-        txtTelefone.setText(aluno.getTelefone());
+        txtNome.setText(professor.getNome());
+        txtEndereco.setText(professor.getEndereco());
+        txtDisciplina.setText(professor.getDisciplina());
+        txtTelefone.setText(professor.getTelefone());
     }
 
     private void fillList(){
-        List<Aluno> alunoes = dao.searchAll();
+        List<Professor> professores = dao.searchAll();
 
-        ObservableList<Aluno> data = FXCollections.observableArrayList(alunoes);
+        ObservableList<Professor> data = FXCollections.observableArrayList(professores);
  
-        lstAlunos.setItems(data);
+        lstProfessores.setItems(data);
  
     }
     @Override

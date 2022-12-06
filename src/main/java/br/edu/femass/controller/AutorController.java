@@ -4,8 +4,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javax.persistence.Table;
-
 import br.edu.femass.dao.DaoAutor;
 import br.edu.femass.model.Autor;
 import javafx.collections.FXCollections;

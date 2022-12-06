@@ -1,5 +1,8 @@
 package br.edu.femass.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Professor extends Leitor{
     protected String disciplina;
     protected  int prazo;
