@@ -1,6 +1,8 @@
 package br.edu.femass.model;
 
+import javax.persistence.Entity;
 
+@Entity
 public class Aluno extends Leitor{
     protected String matricula;
     protected int prazo;

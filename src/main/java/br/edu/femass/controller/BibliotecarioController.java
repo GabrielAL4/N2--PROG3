@@ -60,7 +60,4 @@ public class BibliotecarioController implements Initializable{
     @FXML
     private void emprestimo_menu(ActionEvent event){}
 
-
-    
-
 }

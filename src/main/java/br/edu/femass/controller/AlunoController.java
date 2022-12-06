@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import br.edu.femass.dao.DaoAluno;
 import br.edu.femass.model.Aluno;
-import br.edu.femass.model.Leitor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -51,12 +50,12 @@ public class AlunoController implements Initializable{
     private Button addButton;
 
     @FXML
-    private void adicionar_aluno(ActionEvent event) {
+    private void salvar_aluno(ActionEvent event) {
 
         aluno.setNome(txtNome.getText());
-        aluno.setMatricula(txtMatricula.getId());
+        aluno.setMatricula(txtMatricula.getText());
         aluno.setEndereco(txtEndereco.getText());
-        aluno.setTelefone(txtTelefone.getAccessibleText());
+        aluno.setTelefone(txtTelefone.getText());
 
         if (including) {
             dao.insert(aluno);
@@ -93,12 +92,12 @@ public class AlunoController implements Initializable{
     }
 
     @FXML
-    private void lstalunoes_KeyPressed(KeyEvent event){
+    private void lstalunos_KeyPressed(KeyEvent event){
         showData();
     }
     
     @FXML
-    private void lstalunoes_MouseClicked(MouseEvent event){
+    private void lstalunos_MouseClicked(MouseEvent event){
         showData();
     }
 
@@ -125,9 +124,9 @@ public class AlunoController implements Initializable{
     }
 
     private void fillList(){
-        List<Aluno> alunoes = dao.searchAll();
+        List<Aluno> alunos = dao.searchAll();
 
-        ObservableList<Aluno> data = FXCollections.observableArrayList(alunoes);
+        ObservableList<Aluno> data = FXCollections.observableArrayList(alunos);
  
         lstAlunos.setItems(data);
  
