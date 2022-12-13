@@ -1,11 +1,6 @@
 package br.edu.femass.model;
 
 import java.time.LocalDate;
-<<<<<<< HEAD
-=======
-import java.util.ArrayList;
-import java.util.List;
->>>>>>> 3c5deed0ea6433c25c13577c3b573e0de51fc1f8
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

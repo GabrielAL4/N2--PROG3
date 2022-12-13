@@ -47,19 +47,11 @@ public class AlunoController implements Initializable{
     @FXML
     private void salvar_aluno(ActionEvent event) {
 
-<<<<<<< HEAD
         aluno.setMatricula(txtMatricula.getText());
         aluno.setNome(txtNome.getText());
         aluno.setEndereco(txtEndereco.getText());
         aluno.setTelefone(txtTelefone.getText());
         
-=======
-        aluno.setNome(txtNome.getText());
-        aluno.setEndereco(txtEndereco.getText());
-        aluno.setTelefone(txtTelefone.getText());
-        aluno.setMatricula(txtMatricula.getText());
-
->>>>>>> 3c5deed0ea6433c25c13577c3b573e0de51fc1f8
         if (including) {
             dao.insert(aluno);
         } else {
@@ -75,17 +67,10 @@ public class AlunoController implements Initializable{
         edit(true);
         including = true;
         aluno = new Aluno();
-<<<<<<< HEAD
         txtMatricula.setText("");
         txtNome.setText("");
         txtEndereco.setText("");
         txtTelefone.setText("");
-=======
-        txtNome.setText("");
-        txtEndereco.setText("");
-        txtTelefone.setText("");
-        txtMatricula.setText("");
->>>>>>> 3c5deed0ea6433c25c13577c3b573e0de51fc1f8
         txtNome.requestFocus();
     }
 
@@ -102,36 +87,21 @@ public class AlunoController implements Initializable{
     }
 
     @FXML
-<<<<<<< HEAD
     private void lstAlunos_KeyPressed(KeyEvent event){
-=======
-    private void lstalunos_KeyPressed(KeyEvent event){
->>>>>>> 3c5deed0ea6433c25c13577c3b573e0de51fc1f8
         showData();
     }
     
     @FXML
-<<<<<<< HEAD
     private void lstAlunos_MouseClicked(MouseEvent event){
-=======
-    private void lstalunos_MouseClicked(MouseEvent event){
->>>>>>> 3c5deed0ea6433c25c13577c3b573e0de51fc1f8
         showData();
     }
 
     private void edit(boolean enable){
         lstAlunos.setDisable(enable);
-<<<<<<< HEAD
         txtMatricula.setDisable(!enable);
         txtNome.setDisable(!enable);
         txtEndereco.setDisable(!enable);
         txtTelefone.setDisable(!enable);
-=======
-        txtNome.setDisable(!enable);
-        txtEndereco.setDisable(!enable);
-        txtTelefone.setDisable(!enable);
-        txtMatricula.setDisable(!enable);
->>>>>>> 3c5deed0ea6433c25c13577c3b573e0de51fc1f8
         addButton.setDisable(!enable);
         includeButton.setDisable(enable);
         modifyButton.setDisable(enable);
@@ -142,17 +112,10 @@ public class AlunoController implements Initializable{
 
         if(aluno == null) return;
 
-<<<<<<< HEAD
         txtMatricula.setText(aluno.getMatricula());
         txtNome.setText(aluno.getNome());
         txtEndereco.setText(aluno.getEndereco());
         txtTelefone.setText(aluno.getTelefone());
-=======
-        txtNome.setText(aluno.getNome());
-        txtEndereco.setText(aluno.getEndereco());
-        txtTelefone.setText(aluno.getTelefone());
-        txtMatricula.setText(aluno.getMatricula());
->>>>>>> 3c5deed0ea6433c25c13577c3b573e0de51fc1f8
     }
 
     private void fillList(){
