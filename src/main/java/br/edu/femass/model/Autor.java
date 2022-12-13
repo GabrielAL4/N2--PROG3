@@ -1,9 +1,13 @@
 package br.edu.femass.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 
@@ -13,15 +17,22 @@ public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    protected String nome;
-    protected String sobrenome;
-    protected String nacionalidade;
+    private String nome;
+    private String sobrenome;
+    private String nacionalidade;
+
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Livro> livros;
     public Autor(String nome, String sobrenome, String nacionalidade) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.nacionalidade = nacionalidade;
     }
     public Autor() {
+    }
+
+    public void addListLivro(Livro livro){
+        livros.add(livro);
     }
 
     public long getId() {

@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import br.edu.femass.dao.Dao;
 import br.edu.femass.dao.DaoAutor;
 import br.edu.femass.model.Autor;
 import javafx.collections.FXCollections;
@@ -14,7 +13,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
@@ -22,20 +24,26 @@ public class AutorController implements Initializable {
     
     @FXML
     private TextField txtNome;
-
     @FXML
     private TextField txtSobrenome;
-
     @FXML
     private TextField txtNacionalidade;
-
     @FXML
     private ListView<Autor> lstAutores;
+    @FXML
+    private TableView<Autor> tableAutores = new TableView<Autor>();
+    @FXML
+    private TableColumn<Autor, Long> columnId = new TableColumn<>();
+    @FXML
+    private TableColumn<Autor, String> columnNome = new TableColumn<>();
+    @FXML
+    private TableColumn<Autor, String> columnSobrenome = new TableColumn<>();
+    @FXML
+    private TableColumn<Autor, String> columnNacionalidade = new TableColumn<>();
+
 
     private Autor autor;
-
     private DaoAutor dao = new DaoAutor();
-
     private Boolean including;
     
     @FXML
@@ -62,10 +70,6 @@ public class AutorController implements Initializable {
         
         fillList();
         edit(false);
-        /*preencherLista();
-        preencherTabela();
-        preencherCombo();
-        editar(false);*/
     }
 
     @FXML
@@ -89,6 +93,7 @@ public class AutorController implements Initializable {
     private void excluir_autor(ActionEvent event) {
         dao.delete(autor);
         fillList();
+        fillTable();
     }
 
     @FXML
@@ -103,6 +108,7 @@ public class AutorController implements Initializable {
 
     private void edit(boolean enable){
         lstAutores.setDisable(enable);
+        tableAutores.setDisable(enable);
         txtNome.setDisable(!enable);
         txtSobrenome.setDisable(!enable);
         txtNacionalidade.setDisable(!enable);
@@ -113,7 +119,8 @@ public class AutorController implements Initializable {
     }
     private void showData(){
         this.autor = lstAutores.getSelectionModel().getSelectedItem();
-
+        this.autor = tableAutores.getSelectionModel().getSelectedItem();
+        
         if(autor == null) return;
 
         txtNome.setText(autor.getNome());
@@ -129,8 +136,33 @@ public class AutorController implements Initializable {
         lstAutores.setItems(data);
  
     }
+
+    private void fillTable(){
+        List<Autor> autores = dao.searchAll();
+
+        ObservableList<Autor> data = FXCollections.observableArrayList(autores);
+ 
+        tableAutores.setItems(data);
+        tableAutores.refresh();
+
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       fillList();
-    }    
+        columnId.setCellValueFactory(
+            new PropertyValueFactory<Autor, Long>("id")
+        );
+        columnNome.setCellValueFactory(
+            new PropertyValueFactory<Autor, String>("nome")
+        );
+        columnSobrenome.setCellValueFactory(
+            new PropertyValueFactory<Autor, String>("sobrenome")
+        );
+        columnNacionalidade.setCellValueFactory(
+            new PropertyValueFactory<Autor, String>("nacionalidade")
+        );
+        
+        
+        fillList();
+        fillTable();
+    }
 }

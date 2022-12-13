@@ -12,7 +12,4 @@ public class DaoAutor extends Dao<Autor>{
         return em.createQuery("select c from Autor c order by c.nome").getResultList();
     }    
     
-    public List<Autor> searchAllById() {
-        return em.createQuery("select c from Autor c order by c.id").getResultList();
-    }
 }

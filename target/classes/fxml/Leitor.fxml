@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.LeitorController">
+   <children>
+      <Button layoutX="259.0" layoutY="99.0" mnemonicParsing="false" onAction="#aluno_click" prefHeight="82.0" prefWidth="124.0" text="Aluno" />
+      <Label layoutX="252.0" layoutY="42.0" text="Para concluir o cadastro, selecione uma das opções abaixo:" />
+      <Button layoutX="440.0" layoutY="99.0" mnemonicParsing="false" onAction="#professor_click" prefHeight="82.0" prefWidth="124.0" text="Professor" />
+      <TableView fx:id="tableLeitores" layoutX="14.0" layoutY="74.0" prefHeight="200.0" prefWidth="228.0">
+        <columns>
+          <TableColumn fx:id="columnCodigo" prefWidth="75.0" text="Codigo" />
+          <TableColumn fx:id="columnNome" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="columnEndereco" prefWidth="75.0" text="Endereco" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

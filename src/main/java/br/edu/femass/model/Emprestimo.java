@@ -1,50 +1,63 @@
 package br.edu.femass.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Emprestimo {
-    protected LocalDate dataEmprestimo;
-    protected LocalDate dataDevolucao;
-    protected LocalDate dataPrevistaDevolucao;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-    protected List<Livro> livros = new ArrayList<>();
-    protected List<Professor> professores = new ArrayList<>();
-    protected List<Aluno> alunos = new ArrayList<>();
-    public Emprestimo(LocalDate dataEmprestimo, LocalDate dataDevolucao, LocalDate dataPrevistaDevolucao,
-                      List<Livro> livros, List<Professor> professores, List<Aluno> alunos) {
-        this.dataEmprestimo = dataEmprestimo;
-        this.dataDevolucao = dataDevolucao;
-        this.dataPrevistaDevolucao = dataPrevistaDevolucao;
-        this.livros = livros;
-        this.professores = professores;
-        this.alunos = alunos;
+    private LocalDate dataEmprestimo;
+    private LocalDate dataDevolucao;
+    private LocalDate dataPrevistaDevolucao;
+
+    private Exemplar exemplar;
+    private Leitor leitor;
+
+    public Emprestimo(Exemplar exemplar, Leitor leitor) {
+        this.leitor = leitor;
+        this.exemplar = exemplar;
+        this.exemplar.setDisponivel(false);
+
+        this.dataEmprestimo = LocalDate.now();
+        this.dataPrevistaDevolucao = LocalDate.now().plusDays(leitor.getPrazoMaximoDeDevolucao());
+        
     }
 
     public Emprestimo() {
+        this.dataEmprestimo = LocalDate.now();
     }
 
-    public List<Livro> getLivros() {
-        return livros;
+    public long getId() {
+        return id;
     }
 
-    public void setLivros(List<Livro> livros) {
-        this.livros = livros;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public List<Professor> getProfessores() {
-        return professores;
+    public Exemplar getExemplar() {
+        return exemplar;
     }
 
-    public void setProfessores(List<Professor> professores) {
-        this.professores = professores;
+    public void setExemplar(Exemplar exemplar) {
+        this.exemplar = exemplar;
     }
 
-    public List<Aluno> getAlunos() {
-        return alunos;
+    public Leitor getLeitor() {
+        return leitor;
     }
+
+    public void setLeitor(Leitor leitor) {
+        this.leitor = leitor;
+    }
+
     public void setDataEmprestimo(LocalDate dataEmprestimo) {
         this.dataEmprestimo = dataEmprestimo;
     }
@@ -55,9 +68,6 @@ public class Emprestimo {
 
     public void setDataPrevistaDevolucao(LocalDate dataPrevistaDevolucao) {
         this.dataPrevistaDevolucao = dataPrevistaDevolucao;
-    }
-    public void setAlunos(List<Aluno> alunos) {
-        this.alunos = alunos;
     }
 
     public LocalDate getDataEmprestimo() {
