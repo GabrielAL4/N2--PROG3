@@ -41,6 +41,23 @@ public class AutorController implements Initializable {
     @FXML
     private TableColumn<Autor, String> columnNacionalidade = new TableColumn<>();
 
+<<<<<<< HEAD
+=======
+    @FXML
+    private TableView<Autor> tableAutores = new TableView<>();
+
+    @FXML
+    private TableColumn<Autor, Long> columnId = new TableColumn<>();
+    @FXML
+    private TableColumn<Autor, String> columnNome = new TableColumn<>();
+    @FXML
+    private TableColumn<Autor, String> columnSobrenome = new TableColumn<>();
+    @FXML
+    private TableColumn<Autor, String> columnNacionalidade = new TableColumn<>();
+
+
+    private Autor autor;
+>>>>>>> 3c5deed0ea6433c25c13577c3b573e0de51fc1f8
 
     private Autor autor;
     private DaoAutor dao = new DaoAutor();
@@ -143,6 +160,7 @@ public class AutorController implements Initializable {
         ObservableList<Autor> data = FXCollections.observableArrayList(autores);
  
         tableAutores.setItems(data);
+<<<<<<< HEAD
         tableAutores.refresh();
 
     }
@@ -165,4 +183,26 @@ public class AutorController implements Initializable {
         fillList();
         fillTable();
     }
+=======
+ 
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        columnNome.setCellValueFactory(
+            new PropertyValueFactory<Autor, String>("Nome")
+        );
+        columnSobrenome.setCellValueFactory(
+            new PropertyValueFactory<Autor, String>("Sobrenome")
+        );
+        columnNacionalidade.setCellValueFactory(
+            new PropertyValueFactory<Autor, String>("Nacionalidade")
+        );
+        columnId.setCellValueFactory(
+            new PropertyValueFactory<Autor, Long>("Id")
+        );
+        
+        fillList();
+        fillTable();
+    }    
+>>>>>>> 3c5deed0ea6433c25c13577c3b573e0de51fc1f8
 }

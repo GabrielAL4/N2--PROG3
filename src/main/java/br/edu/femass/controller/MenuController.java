@@ -51,5 +51,12 @@ public class MenuController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         // TODO Auto-generated method stub
         
+<<<<<<< HEAD
     }   
 }
+=======
+    }
+    
+    
+}
+>>>>>>> 3c5deed0ea6433c25c13577c3b573e0de51fc1f8
