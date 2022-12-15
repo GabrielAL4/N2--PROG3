@@ -106,6 +106,16 @@ public class AutorController implements Initializable {
         showData();
     }
 
+    @FXML
+    private void tableAutores_KeyPressed(KeyEvent event){
+        showData();
+    }
+    
+    @FXML
+    private void tableAutores_MouseClicked(MouseEvent event){
+        showData();
+    }
+
     private void edit(boolean enable){
         lstAutores.setDisable(enable);
         tableAutores.setDisable(enable);
@@ -161,7 +171,7 @@ public class AutorController implements Initializable {
             new PropertyValueFactory<Autor, String>("nacionalidade")
         );
         
-        
+        tableAutores.refresh();
         fillList();
         fillTable();
     }

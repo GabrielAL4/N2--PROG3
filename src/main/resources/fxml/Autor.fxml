@@ -21,7 +21,7 @@
       <Button fx:id="includeButton" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#incluir_autor" text="Incluir" />
       <Button fx:id="modifyButton" layoutX="93.0" layoutY="355.0" mnemonicParsing="false" onAction="#alterar_autor" text="Alterar" />
       <Button fx:id="deleteButton" layoutX="171.0" layoutY="355.0" mnemonicParsing="false" onAction="#excluir_autor" text="Excluir" />
-      <TableView fx:id="tableAutores" layoutX="602.0" layoutY="72.0" prefHeight="200.0" prefWidth="323.0">
+      <TableView fx:id="tableAutores" layoutX="602.0" layoutY="72.0" onKeyPressed="#tableAutores_KeyPressed" onMouseClicked="#tableAutores_MouseClicked" prefHeight="200.0" prefWidth="323.0">
         <columns>
           <TableColumn fx:id="columnId" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="columnNome" prefWidth="75.0" text="Nome" />

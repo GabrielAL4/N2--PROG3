@@ -7,30 +7,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-
 @Entity
 public class Livro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
-    protected String titulo;
+    protected Long id;
+
+    private String titulo;
     @ManyToOne(cascade = {CascadeType.ALL})
-    protected Autor autor;
+    private Autor autor;
     
-    public Livro(String titulo, Autor autor) {
+    
+
+    public Livro(String titulo, Autor autor, String ano) {
         this.titulo = titulo;
         this.autor = autor;
+
     }
 
     public Livro() {
     }
 
-    public Long getCodigo() {
-        return codigo;
+    public Long getId() {
+        return id;
     }
-    public void setCodigo(Long codigo) {
-        this.codigo = codigo;
+    public void getId(Long id) {
+        this.id = id;
     }
     public String getTitulo() {
         return titulo;
@@ -47,6 +50,6 @@ public class Livro {
 
     @Override
     public String toString() {
-        return codigo + " - " + titulo;
+        return id + " - " + titulo;
     }
 }

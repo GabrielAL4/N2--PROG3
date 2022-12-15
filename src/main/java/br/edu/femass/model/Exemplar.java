@@ -14,10 +14,11 @@ public class Exemplar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
-    private String titulo;
-    private LocalDate dataAquisicao;
     @ManyToOne(cascade = CascadeType.ALL)
     private Livro livro;
+    
+    private String titulo;
+    private LocalDate dataAquisicao;
     private boolean disponivel;
 
     public Exemplar(Livro livro) {
@@ -62,12 +63,15 @@ public class Exemplar {
     public Long getCodigo() {
         return codigo;
     }
+
     public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
+
     public LocalDate getDataAquisicao() {
         return dataAquisicao;
     }
+
     public void setDataAquisicao(LocalDate dataAquisicao) {
         this.dataAquisicao = dataAquisicao;
     }

@@ -11,5 +11,4 @@ public class DaoEmprestimo extends Dao<Emprestimo>{
     public List<Emprestimo> searchAll() {
         return em.createQuery("select c from Autor c order by c.nome").getResultList();
     }    
-    
 }

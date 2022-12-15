@@ -71,11 +71,8 @@ public class LeitorController implements Initializable{
 
     private void fillTable(){
         List<Leitor> autores = dao.searchAll();
-
         ObservableList<Leitor> data = FXCollections.observableArrayList(autores);
- 
         tableLeitores.setItems(data);
- 
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {

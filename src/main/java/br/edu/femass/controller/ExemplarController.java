@@ -67,13 +67,13 @@ public class ExemplarController implements Initializable {
         }
 
         fillTable();
-        editar(false);
+        edit(false);
         
     }
 
     @FXML
     private void incluir_exemplar(ActionEvent event) {
-        editar(true);
+        edit(true);
         fillCombo();
         fillTable();
         including = true;
@@ -83,21 +83,21 @@ public class ExemplarController implements Initializable {
     }
 
     @FXML
-    private void alterar_click(ActionEvent event) {
-        editar(true);
+    private void alterar_exemplar(ActionEvent event) {
+        edit(true);
         fillCombo();
         fillTable();
         including = false;
     }
 
     @FXML
-    private void excluir_click(ActionEvent event) {
+    private void excluir_exemplar(ActionEvent event) {
         dao.delete(exemplar);
 
         fillTable();
     }
     
-    private void editar(boolean enable) {
+    private void edit(boolean enable) {
         comboBoxLivros.setDisable(!enable);
         addExemplarButton.setDisable(!enable);
         modifyExButton.setDisable(enable);
@@ -130,7 +130,7 @@ public class ExemplarController implements Initializable {
         );
 
         columnData.setCellValueFactory(
-            new PropertyValueFactory<Exemplar,LocalDate>("dataAquisicao")
+            new PropertyValueFactory<Exemplar,LocalDate>("dataDeAquisicao")
         );
 
         fillCombo();
