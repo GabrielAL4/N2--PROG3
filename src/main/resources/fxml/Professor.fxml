@@ -8,14 +8,14 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.ProfessorController">
    <children>
-      <Button fx:id="saveButton" layoutX="497.0" layoutY="328.0" mnemonicParsing="false" onAction="#salvar_professor" text="Salvar" />
+      <Button fx:id="saveButton" disable="true" layoutX="497.0" layoutY="328.0" mnemonicParsing="false" onAction="#salvar_professor" text="Salvar" />
       <Label layoutX="286.0" layoutY="30.0" text="Professor" />
       <ListView fx:id="lstProfessores" layoutX="14.0" layoutY="54.0" prefHeight="284.0" prefWidth="200.0" />
       <Label layoutX="252.0" layoutY="91.0" text="Disciplina" />
-      <TextField fx:id="txtDisciplina" layoutX="336.0" layoutY="87.0" />
-      <TextField fx:id="txtNome" layoutX="336.0" layoutY="136.0" />
-      <TextField fx:id="txtEndereco" layoutX="336.0" layoutY="188.0" />
-      <TextField fx:id="txtTelefone" layoutX="336.0" layoutY="238.0" />
+      <TextField fx:id="txtDisciplina" disable="true" layoutX="336.0" layoutY="87.0" />
+      <TextField fx:id="txtNome" disable="true" layoutX="336.0" layoutY="136.0" />
+      <TextField fx:id="txtEndereco" disable="true" layoutX="336.0" layoutY="188.0" />
+      <TextField fx:id="txtTelefone" disable="true" layoutX="336.0" layoutY="238.0" />
       <Label layoutX="252.0" layoutY="140.0" text="Nome" />
       <Label layoutX="252.0" layoutY="192.0" text="Endereço" />
       <Label layoutX="252.0" layoutY="242.0" text="Telefone" />

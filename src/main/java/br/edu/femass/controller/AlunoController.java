@@ -71,7 +71,7 @@ public class AlunoController implements Initializable{
         txtNome.setText("");
         txtEndereco.setText("");
         txtTelefone.setText("");
-        txtNome.requestFocus();
+        txtMatricula.requestFocus();
     }
 
     @FXML
@@ -102,7 +102,7 @@ public class AlunoController implements Initializable{
         txtNome.setDisable(!enable);
         txtEndereco.setDisable(!enable);
         txtTelefone.setDisable(!enable);
-        addButton.setDisable(!enable);
+        saveButton.setDisable(!enable);
         includeButton.setDisable(enable);
         modifyButton.setDisable(enable);
         deleteButton.setDisable(enable);

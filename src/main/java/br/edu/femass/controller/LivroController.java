@@ -48,7 +48,7 @@ public class LivroController implements Initializable {
     @FXML
     private Button addButton; 
     @FXML
-    private ComboBox<Autor> cboxAutor;
+    private ComboBox<Autor> autorComboBox;
 
     private DaoLivro dao = new DaoLivro();
     private DaoAutor daoAutor = new DaoAutor();
@@ -59,7 +59,7 @@ public class LivroController implements Initializable {
     @FXML
     private void salvar_livro(ActionEvent event) {
         livro.setTitulo(txtTitulo.getText());
-        livro.setAutor(cboxAutor.getSelectionModel().getSelectedItem());
+        livro.setAutor(autorComboBox.getSelectionModel().getSelectedItem());
         if (including) {
             dao.insert(livro);
         } else {
@@ -94,7 +94,7 @@ public class LivroController implements Initializable {
     
     private void edit(boolean enable) {
         txtTitulo.setDisable(!enable);
-        cboxAutor.setDisable(!enable);
+        autorComboBox.setDisable(!enable);
         tableLivros.setDisable(enable);
         addButton.setDisable(!enable);
         modifyButton.setDisable(enable);
@@ -123,7 +123,7 @@ public class LivroController implements Initializable {
     private void fillCombo(){
         List<Autor> autores = daoAutor.searchAll();
         ObservableList<Autor> data = FXCollections.observableArrayList(autores);
-        cboxAutor.setItems(data);   
+        autorComboBox.setItems(data);   
     }
 
     private void fillTable(){
@@ -144,7 +144,7 @@ public class LivroController implements Initializable {
         columnAutor.setCellValueFactory(
             new PropertyValueFactory<Autor,String>("autor")
         );
-
+        fillCombo();
         fillTable();
     }    
 }

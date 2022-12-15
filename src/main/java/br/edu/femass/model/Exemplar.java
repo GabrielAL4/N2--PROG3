@@ -22,7 +22,7 @@ public class Exemplar {
     private boolean disponivel;
 
     public Exemplar(Livro livro) {
-        this.titulo = livro.getTitulo();
+        //this.titulo = livro.getTitulo();
         this.livro = livro;
         this.dataAquisicao= LocalDate.now();
         this.disponivel = true;
@@ -75,4 +75,11 @@ public class Exemplar {
     public void setDataAquisicao(LocalDate dataAquisicao) {
         this.dataAquisicao = dataAquisicao;
     }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return this.livro.getTitulo();
+    }
+
 }

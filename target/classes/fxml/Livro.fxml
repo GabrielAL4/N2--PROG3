@@ -10,11 +10,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.LivroController">
    <children>
-      <Button fx:id="addButton" layoutX="493.0" layoutY="200.0" mnemonicParsing="false" onAction="#salvar_livro" text="Salvar" />
+      <Button fx:id="addButton" disable="true" layoutX="493.0" layoutY="200.0" mnemonicParsing="false" onAction="#salvar_livro" text="Salvar" />
       <Label layoutX="272.0" layoutY="22.0" text="Gravar Livro" />
       <Label layoutX="272.0" layoutY="83.0" text="Titulo" />
-      <TextField fx:id="txtTitulo" layoutX="320.0" layoutY="79.0" prefHeight="25.0" prefWidth="224.0" />
-      <ComboBox fx:id="autorComboBox" layoutX="320.0" layoutY="147.0" prefHeight="25.0" prefWidth="224.0" />
+      <TextField fx:id="txtTitulo" disable="true" layoutX="320.0" layoutY="79.0" prefHeight="25.0" prefWidth="224.0" />
+      <ComboBox fx:id="autorComboBox" disable="true" layoutX="320.0" layoutY="147.0" prefHeight="25.0" prefWidth="224.0" />
       <Button fx:id="includeButton" layoutX="14.0" layoutY="357.0" mnemonicParsing="false" onAction="#incluir_livro" text="Incluir" />
       <Button fx:id="deleteButton" layoutX="162.0" layoutY="357.0" mnemonicParsing="false" onAction="#excluir_livro" text="Excluir" />
       <Button fx:id="modifyButton" layoutX="88.0" layoutY="357.0" mnemonicParsing="false" onAction="#alterar_livro" text="Alterar" />

@@ -20,7 +20,7 @@ public class Livro {
     
     
 
-    public Livro(String titulo, Autor autor, String ano) {
+    public Livro(String titulo, Autor autor) {
         this.titulo = titulo;
         this.autor = autor;
 

@@ -36,7 +36,7 @@ public class ExemplarController implements Initializable {
     private TableColumn<Exemplar,LocalDate> columnData = new TableColumn<>();
 
     @FXML
-    private Button incluirExButton;
+    private Button includeExButton;
   
     @FXML
     private Button modifyExButton;
@@ -101,7 +101,7 @@ public class ExemplarController implements Initializable {
         comboBoxLivros.setDisable(!enable);
         addExemplarButton.setDisable(!enable);
         modifyExButton.setDisable(enable);
-        incluirExButton.setDisable(enable);
+        includeExButton.setDisable(enable);
         deleteExButton.setDisable(enable);
     }
 
@@ -122,7 +122,7 @@ public class ExemplarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         columnId.setCellValueFactory(
-            new PropertyValueFactory<Exemplar,Long>("id")
+            new PropertyValueFactory<Exemplar,Long>("codigo")
         );
 
         columnLivro.setCellValueFactory(
@@ -130,7 +130,7 @@ public class ExemplarController implements Initializable {
         );
 
         columnData.setCellValueFactory(
-            new PropertyValueFactory<Exemplar,LocalDate>("dataDeAquisicao")
+            new PropertyValueFactory<Exemplar,LocalDate>("dataAquisicao")
         );
 
         fillCombo();

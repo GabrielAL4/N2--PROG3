@@ -81,10 +81,10 @@ public class LeitorController implements Initializable{
             new PropertyValueFactory<Leitor, String>("Nome")
         );
         columnEndereco.setCellValueFactory(
-            new PropertyValueFactory<Leitor, String>("Endereço")
+            new PropertyValueFactory<Leitor, String>("Endereco")
         );
         columnCodigo.setCellValueFactory(
-            new PropertyValueFactory<Leitor, Long>("Id")
+            new PropertyValueFactory<Leitor, Long>("codigo")
         );
         fillTable();
     }

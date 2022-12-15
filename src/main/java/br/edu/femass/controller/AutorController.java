@@ -67,7 +67,7 @@ public class AutorController implements Initializable {
         } else {
             dao.modify(autor);
         }
-        
+        fillTable();
         fillList();
         edit(false);
     }

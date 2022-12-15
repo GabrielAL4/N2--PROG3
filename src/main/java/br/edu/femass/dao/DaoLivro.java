@@ -9,7 +9,7 @@ import br.edu.femass.model.Livro;
 public class DaoLivro extends Dao<Livro>{ 
     
     public List<Livro> searchAll() {
-        return em.createQuery("select c from Livro c order by c.nome").getResultList();
+        return em.createQuery("select c from Livro c order by c.id").getResultList();
     }    
     
 }

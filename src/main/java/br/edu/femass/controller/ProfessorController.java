@@ -46,14 +46,13 @@ public class ProfessorController implements Initializable{
     private Button modifyButton;
     @FXML
     private Button deleteButton;
-    @FXML
-    private Button addButton;
+
 
     @FXML
     private void salvar_professor(ActionEvent event) {
 
         professor.setNome(txtNome.getText());
-        professor.setDisciplina(txtDisciplina.getId());
+        professor.setDisciplina(txtDisciplina.getText());
         professor.setEndereco(txtEndereco.getText());
         professor.setTelefone(txtTelefone.getAccessibleText());
 
@@ -76,7 +75,7 @@ public class ProfessorController implements Initializable{
         txtEndereco.setText("");
         txtDisciplina.setText("");
         txtTelefone.setText("");
-        txtNome.requestFocus();
+        txtDisciplina.requestFocus();
     }
 
     @FXML
@@ -107,7 +106,7 @@ public class ProfessorController implements Initializable{
         txtEndereco.setDisable(!enable);
         txtDisciplina.setDisable(!enable);
         txtTelefone.setDisable(!enable);
-        addButton.setDisable(!enable);
+        saveButton.setDisable(!enable);
         includeButton.setDisable(enable);
         modifyButton.setDisable(enable);
         deleteButton.setDisable(enable);
